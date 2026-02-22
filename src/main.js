@@ -79,19 +79,17 @@ loadMoreBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
-    const totalPages = Math.ceil(totalHits / 15);
+const totalPages = Math.ceil(totalHits / 15);
 
-    if (currentPage >= totalPages) {
-      hideLoadMoreButton();
-
-      iziToast.info({
-        message:
-          "We're sorry, but you've reached the end of search results.",
-        position: 'topRight',
-      });
-    } else {
-      showLoadMoreButton();
-    }
+if (currentPage >= totalPages) {
+  hideLoadMoreButton();
+  iziToast.info({
+    message: "We're sorry, but you've reached the end of search results.",
+    position: 'topRight',
+  });
+} else {
+  showLoadMoreButton();
+}
 
     const { height } = document
       .querySelector('.gallery-item')
