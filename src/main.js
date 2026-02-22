@@ -54,7 +54,16 @@ form.addEventListener('submit', async event => {
 
     createGallery(data.hits);
 
-    if (totalHits > 15) {
+    
+    const totalPages = Math.ceil(totalHits / 15);
+
+    if (currentPage >= totalPages) {
+      hideLoadMoreButton();
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+        position: 'topRight',
+      });
+    } else {
       showLoadMoreButton();
     }
 
@@ -79,26 +88,28 @@ loadMoreBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
-const totalPages = Math.ceil(totalHits / 15);
+    const totalPages = Math.ceil(totalHits / 15);
 
-if (currentPage >= totalPages) {
-  hideLoadMoreButton();
-  iziToast.info({
-    message: "We're sorry, but you've reached the end of search results.",
-    position: 'topRight',
-  });
-} else {
-  showLoadMoreButton();
-}
+    if (currentPage >= totalPages) {
+      hideLoadMoreButton();
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results.",
+        position: 'topRight',
+      });
+      return; 
+    }
 
-    const { height } = document
-      .querySelector('.gallery-item')
-      .getBoundingClientRect();
+    showLoadMoreButton();
 
-    window.scrollBy({
-      top: height * 2,
-      behavior: 'smooth',
-    });
+   
+    const galleryItem = document.querySelector('.gallery-item');
+    if (galleryItem) {
+      const { height } = galleryItem.getBoundingClientRect();
+      window.scrollBy({
+        top: height * 2,
+        behavior: 'smooth',
+      });
+    }
 
   } catch (error) {
     iziToast.error({
