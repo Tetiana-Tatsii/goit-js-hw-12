@@ -7,12 +7,155 @@
 /* Common styles */
 @import url('./reset.css');
 @import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+.form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  height: 40px;
+}
+
+.form input {
+  width: 272px;
+  height: 24px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  font-family: var(--font-family);
+  font-size: 16px;
+  outline: none;
+}
+
+.form input:focus {
+  border-color: #4e75ff;
+}
+
+.form button {
+  width: 91px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  background: #4e75ff;
+  color: #fff;
+  font-family: var(--font-family);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 250ms ease;
+}
+
+.form button:hover {
+  background: #6c8cff;
+}
+
+button {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  width: 125px;
+    height: 40px;
+    border-radius: 8px;
+    padding: 8px 16px;
+    border: none;
+    background: #4e75ff;
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 250ms ease;
+}
+
+button.load-more {
+  display: flex;
+  margin: 30px auto;
+}
+
+
+.gallery {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 360px;
+  border: 1px solid #808080;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.info-title {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.info-value {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+}
+
+.loader-spinner{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid;
+  border-color: #FF3D00 transparent;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
