@@ -32,12 +32,19 @@
   border-color: #4e75ff;
 }
 
-.form button {
-  width: 91px;
+/* ===== Загальний стиль кнопок ===== */
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
   height: 40px;
-  border-radius: 8px;
   padding: 8px 16px;
+  border-radius: 8px;
   border: none;
+
   background: #4e75ff;
   color: #fff;
   font-family: var(--font-family);
@@ -46,30 +53,18 @@
   transition: background 250ms ease;
 }
 
-.form button:hover {
+button:hover {
   background: #6c8cff;
 }
 
-button {
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  width: 125px;
-    height: 40px;
-    border-radius: 8px;
-    padding: 8px 16px;
-    border: none;
-    background: #4e75ff;
-    color: #fff;
-    font-family: var(--font-family);
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 250ms ease;
+
+.form button {
+  width: 91px;
 }
 
-button.load-more {
-  display: flex;
+
+.load-more {
+  width: 125px;
   margin: 30px auto;
 }
 
@@ -133,7 +128,7 @@ button.load-more {
   margin-top: 20px;
 }
 
-.hidden {
+.is-hidden {
   display: none;
 }
 
